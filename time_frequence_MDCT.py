@@ -119,8 +119,7 @@ def _get_imdct_kernels(nfft):
     kernels = np.fromfunction(kernel_fn, (int(nfft), int(nfft//2)), dtype=np.float64)
     
     kernels = nn.Parameter(torch.from_numpy(kernels[:, np.newaxis, :, np.newaxis]).float())
-    print("kernels size")
-    print(kernels.shape)
+
     return kernels
 
 
